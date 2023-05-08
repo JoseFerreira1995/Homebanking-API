@@ -1,8 +1,9 @@
 "use strict";
 
 const Hapi = require("@hapi/hapi");
-const jwt = require("jsonwebtoken");
+const jwtUtils = require("./utils/jwtUtils");
 const HapiJWT = require("hapi-auth-jwt");
+const Joi = require("joi");
 
 const init = async () => {
   const server = Hapi.server({
@@ -14,9 +15,7 @@ const init = async () => {
 
   server.auth.strategy("jwt", "jwt", {
     key: "my-key",
-    validate: async (decoded, request, h) => {
-      return { isValid: true };
-    },
+    validate: jwtUtils.validateJWT,
   });
 
   server.auth.default("jwt");
