@@ -2,6 +2,7 @@
 
 const Hapi = require("@hapi/hapi");
 const jwtUtils = require("./utils/jwtUtils");
+const userModel = require("./model/userModel");
 const HapiJWT = require("hapi-auth-jwt");
 const Joi = require("joi");
 
