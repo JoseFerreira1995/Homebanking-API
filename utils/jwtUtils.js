@@ -6,4 +6,13 @@ const generateToken = (user) => {
   const token = jwt.sign({ sub: user.id }, secretKey, { expires: "2h" });
   return token;
 };
-module.exports = generateToken
+
+const validateToken = (token) => {
+  try {
+    const decoded = jwt.verify(token, secretKey);
+    return decoded.sub;
+  } catch (err) {
+    return null;
+  }
+}
+module.exports = {generateToken, validateToken};
