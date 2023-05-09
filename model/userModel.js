@@ -1,7 +1,7 @@
 const fs = require("fs/promises");
 const path = require("path");
 
-const userfilePath = path.join(__dirname, "../Data/users.jason");
+const userfilePath = path.join(__dirname, "../Data/users.json");
 
 const createUser = async ({ email, password }) => {
   try {
