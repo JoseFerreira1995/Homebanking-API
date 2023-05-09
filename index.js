@@ -12,11 +12,61 @@ const init = async () => {
     host: "localhost",
   });
 
-  await server.register("hapi-auth-jwt2");
+  await server.register(require("hapi-auth-jwt2"));
 
   server.auth.strategy("jwt", "jwt", {
     key: "my-key",
     validate: jwtUtils.validateToken,
+  });
+
+  server.route({
+    method: "GET",
+    path: "/",
+    options: {
+      auth: false,
+    },
+    handler: (req, h) => {
+      return "Welcome to E-bank";
+    },
+  });
+
+  server.route({
+    method: "POST",
+    path: "/register",
+    handler: authController.registerUser,
+  });
+
+  server.route({
+    method: "POST",
+    path: "/login",
+    handler: authController.loginUser,
+  });
+
+  server.route({
+    method: "GET",
+    path: "/transactions",
+    handler: transactionController.getUserTransactions,
+    options: {
+      auth: "jwt",
+    },
+  });
+
+  server.route({
+    method: "PUT",
+    path: "/add-money",
+    handler: transactionController.addMoneyToAccount,
+    options: {
+      auth: "jwt",
+    },
+  });
+
+  server.route({
+    method: "DELETE",
+    path: "/withdraw-money",
+    handler: transactionController.withdrawMoney,
+    options: {
+      auth: "jwt",
+    },
   });
 
   server.auth.default("jwt");
