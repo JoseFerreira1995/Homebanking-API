@@ -15,7 +15,6 @@ import { WithdrawDialogComponent } from '../withdraw-dialog/withdraw-dialog.comp
 export class TransactionsComponent implements OnInit {
   balance!: number;
   transactions: any[] = [];
- 
 
   constructor(
     private apiService: ApiService,
@@ -63,9 +62,7 @@ export class TransactionsComponent implements OnInit {
     });
     dialog.afterClosed().subscribe((result) => {
       if (result) {
-        console.log("🚀 ~ file: transactions.component.ts:64 ~ TransactionsComponent ~ dialog.afterClosed ~ result:", result)
         this.apiService.withdraw(result).subscribe((data) => {
-          console.log("🚀 ~ file: transactions.component.ts:67 ~ TransactionsComponent ~ this.apiService.withdraw ~ data:", data)
           this.balance = data.balance;
           window.location.reload();
         });

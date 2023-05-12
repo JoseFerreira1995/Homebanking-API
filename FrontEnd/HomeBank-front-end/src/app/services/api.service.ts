@@ -26,10 +26,6 @@ export class ApiService {
   withdraw(amount: number): Observable<any> {
     const url = `${this.baseUrl}/withdraw-money`;
     const headers = this.getAuthHeaders();
-    console.log(
-      '🚀 ~ file: api.service.ts:29 ~ ApiService ~ withdraw ~ url:',
-      url
-    );
     return this.http.delete(url, { headers, body: { amount } });
   }
 
@@ -41,13 +37,9 @@ export class ApiService {
 
   private getAuthHeaders(): HttpHeaders {
     const token = this.authService.getToken();
-    console.log(
-      '🚀 ~ file: api.service.ts:41 ~ ApiService ~ getAuthHeaders ~ token:',
-      token
-    );
     return new HttpHeaders({
       Authorization: `Bearer ${token}`,
-      // 'Content-Type': 'application/json',
+      'Content-Type': 'application/json',
     });
   }
 }

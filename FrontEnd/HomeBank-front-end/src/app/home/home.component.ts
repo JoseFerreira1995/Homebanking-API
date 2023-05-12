@@ -5,6 +5,7 @@ import { FormBuilder } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Observable } from 'rxjs';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -29,18 +30,16 @@ export class HomeComponent {
   onSubmit(): void {
     const { email = '', password } = this.loginForm.value;
 
-    console.log('entrou', {email, password});
-     if (email && password) {
-
-    this.authService.login(email, password).subscribe({
-      next: (response) => {
-        console.log('Logged in successfully', response);
-        this.router.navigate(['transactions']);
-      },
-      error: (err) => {
-        console.log('Failed to login', err);
-      },
-    });
+    if (email && password) {
+      this.authService.login(email, password).subscribe({
+        next: (response) => {
+          console.log('Logged in successfully', response);
+          this.router.navigate(['transactions']);
+        },
+        error: (err) => {
+          return err;
+        },
+      });
     }
   }
 }

@@ -12,12 +12,6 @@ export class AuthService {
 
   login(email: string, password: string): Observable<any> {
     const url = `${this.baseUrl}/login`;
-    console.log(
-      '🚀 ~ file: auth.service.ts:16 ~ AuthService ~ login ~ url:',
-      url,
-      email,
-      password
-    );
     return this.http.post(url, { email, password }).pipe(
       tap((response: any) => {
         localStorage.setItem('token', response.token);
@@ -27,7 +21,6 @@ export class AuthService {
 
   register(name: string, email: string, password: string): Observable<any> {
     const url = `${this.baseUrl}/register`;
-
     return this.http.post(url, { name, email, password });
   }
 
@@ -36,10 +29,6 @@ export class AuthService {
   }
 
   getToken(): any {
-    console.log(
-      '🚀 ~ file: auth.service.ts:36 ~ AuthService ~ getToken ~ localStorage:',
-      localStorage
-    );
     return localStorage.getItem('token');
   }
 }

@@ -1,11 +1,13 @@
 <div>
-<h2>Deposit</h2>
-    <p>Please enter the amount you wish to deposit:</p>
-    <mat-form-field>
-      <input matInput [(ngModel)]="amount" placeholder="Amount" type="number">
-    </mat-form-field>
-    <div mat-dialog-actions>
-      <button mat-button (click)="onNoClick()">Cancel</button>
-      <button mat-button [mat-dialog-close]="amount" cdkFocusInitial>Deposit</button>
-    </div>
+  <h2>Deposit</h2>
+  <p>Please enter the amount you wish to deposit:</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="amount" placeholder="Amount" type="number" />
+  </mat-form-field>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button [mat-dialog-close]="amount" cdkFocusInitial>
+      Deposit
+    </button>
+  </div>
 </div>

@@ -1,22 +1,12 @@
 const userModel = require("../model/userModel");
 
 const getUserTransactions = async (request, h) => {
-  console.log("request.auth", request.auth.credentials);
   try {
     const { id } = request.auth.credentials;
-    console.log(
-      "🚀 ~ file: transactionController.js:7 ~ getUserTransactions ~ id:",
-      request.auth.credentials
-    );
 
     const user = await userModel.getUserById(id);
-    console.log(
-      "🚀 ~ file: transactionController.js:13 ~ getUserTransactions ~ user:",
-      user
-    );
 
     if (!user) {
-      console.log("user not found");
       return h.response({ message: "User not found" }).code(404);
     }
 
@@ -24,7 +14,6 @@ const getUserTransactions = async (request, h) => {
       .response({ balance: user.balance, transactions: user.transactions })
       .code(200);
   } catch (err) {
-    console.log(err);
     return h.response({ message: "Failed to get transactions" }).code(500);
   }
 };
@@ -50,7 +39,6 @@ const addMoneyToAccount = async (request, h) => {
       })
       .code(200);
   } catch (err) {
-    console.log(err);
     return h.response({ message: "Failed to add money to account" }).code(500);
   }
 };
@@ -82,7 +70,6 @@ const withdrawMoney = async (request, h) => {
       })
       .code(200);
   } catch (err) {
-    console.error(err);
     return h.response({ message: "Failed to withdraw from account" }).code(500);
   }
 };
