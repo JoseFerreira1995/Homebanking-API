@@ -1,0 +1,38 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.welcome {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.example-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+.form-container-login {
+  width: 400px;
+}
+
+.mat-log-email {
+  margin-left: 106px;
+
+}
+
+.mat-log-password {
+  margin-left: 106px;
+}
+
+.btn-home-login {
+  position:relative;
+  margin-top: 40px;
+  margin-left: 106px;
+}
+.btn-home-signup {
+  position: absolute;
+  margin-top: 196px;
+  margin-left: 106px;
+  
+}

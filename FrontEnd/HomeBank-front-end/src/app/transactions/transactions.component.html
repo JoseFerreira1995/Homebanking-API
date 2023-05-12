@@ -1,0 +1,53 @@
+
+
+<div class="balance">
+  <h1>Current balance: {{ balance }} €</h1>
+</div>
+
+<!-- <table>
+  <thead>
+    <tr>
+      <th>type</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let transaction of transactions">
+      <td>{{ transaction.type }}</td>
+      <td>{{ transaction.amount }}</td>
+    </tr>
+  </tbody>
+</table> -->
+<div class="transiction-table">
+<mat-table [dataSource]="transactions">
+  <ng-container matColumnDef="type">
+    <mat-header-cell *matHeaderCellDef>Type</mat-header-cell>
+    <mat-cell *matCellDef="let transaction">{{ transaction.type }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="amount">
+    <mat-header-cell *matHeaderCellDef>Amount</mat-header-cell>
+    <mat-cell *matCellDef="let transaction">{{ transaction.amount }}</mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="['type', 'amount']"></mat-header-row>
+  <mat-row *matRowDef="let transaction; columns: ['type', 'amount']"></mat-row>
+</mat-table>
+</div>
+<div>
+  
+  <button class="btn-deposit" mat-raised-button color="primary" (click)="addMoney()">
+    Deposit
+  </button>
+  <button class="btn-withdraw" mat-raised-button color="primary" (click)="withdrawMoney()">
+    Withdraw
+  </button>
+</div>
+
+<!-- <button mat-raised-button (click)="openDialog('0ms', '0ms')">Actions</button>
+  <mat-dialog-content>
+    This is a dialog
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close>Okay</button>
+  </mat-dialog-actions> -->
