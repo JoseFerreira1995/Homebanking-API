@@ -1,7 +1,11 @@
 <h1 class="Sign-up">Sign Up</h1>
 
 <div class="example-container">
-  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" class="form-container">
+  <form
+    [formGroup]="checkoutForm"
+    (ngSubmit)="onSubmit()"
+    class="form-container"
+  >
     <mat-form-field class="mat-label-name">
       <mat-label>Enter your Name</mat-label>
       <input
@@ -11,7 +15,7 @@
         formControlName="name"
         required
       />
-    </mat-form-field >
+    </mat-form-field>
     <mat-form-field class="mat-label-email">
       <mat-label>Email</mat-label>
       <input
@@ -33,13 +37,7 @@
       />
     </mat-form-field>
     <div class="btn-register">
-    <button
-      type="submit"
-      mat-raised-button
-      color="primary"
-    >
-      Sign Up
-    </button>
-  </div>
+      <button type="submit" mat-raised-button color="primary">Sign Up</button>
+    </div>
   </form>
 </div>

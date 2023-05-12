@@ -6,7 +6,6 @@ const userfilePath = path.join(__dirname, "../data", "users.json");
 
 const getUsers = async () => {
   try {
-    console.log("Está aqui", userfilePath);
     const data = await fs.readFile(userfilePath, "utf-8");
     return JSON.parse(data);
   } catch (err) {
@@ -29,7 +28,6 @@ const createUser = async ({ email, password }) => {
 
     return user;
   } catch (err) {
-    console.error(err);
     throw new Error("Couldn't create user");
   }
 };
@@ -39,7 +37,6 @@ const getUserByEmail = async (email) => {
     const users = await getUsers();
     return users.find((user) => user.email === email);
   } catch (err) {
-    console.error(err);
     throw new Error(" Failed to get user from email");
   }
 };
@@ -49,7 +46,6 @@ const getUserById = async (id) => {
     const users = await getUsers();
     return users.find((user) => user.id === id);
   } catch (err) {
-    console.log(err);
     throw new Error("Couldn't find user with id ");
   }
 };

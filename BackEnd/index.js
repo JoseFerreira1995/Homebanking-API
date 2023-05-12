@@ -9,8 +9,6 @@ const path = require("path");
 const HapiCors = require("hapi-cors");
 const corsHeaders = require("hapi-cors-headers");
 
-// const userfilePath = path.join(__dirname, "Data");
-
 const init = async () => {
   const server = Hapi.server({
     port: 3000,
@@ -20,9 +18,6 @@ const init = async () => {
       cors: {
         origin: ["*"],
       },
-      //   files: {
-      //     relativeTo: userfilePath,
-      //   },
     },
   });
 
@@ -72,7 +67,7 @@ const init = async () => {
     },
     handler: authController.loginUser,
   });
-  console.log("Adding rout for /transactions");
+
   server.route({
     method: "GET",
     path: "/transactions",
@@ -81,8 +76,6 @@ const init = async () => {
     },
     handler: transactionController.getUserTransactions,
   });
-
-  console.log("After route setup");
 
   server.route({
     method: "PUT",
@@ -119,11 +112,10 @@ const init = async () => {
   });
 
   await server.start();
-  console.log("Server started", server.info.uri);
+  console.log("Server started", server.info.uri)
 };
 
 process.on("unhandledRejection", (err) => {
-  console.log(err);
   process.exit(1);
 });
 

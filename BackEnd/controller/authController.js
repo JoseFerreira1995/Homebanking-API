@@ -21,21 +21,17 @@ const registerUser = async (request, h) => {
     });
 
     const token = jwtUtils.generateToken(newUser);
-    console.log(token);
     return h
       .response({ message: "User registered successfully", token })
       .code(201);
   } catch (err) {
-    console.log(err);
     return h.response({ message: "Failed to register user" }).code(500);
   }
 };
 
 const loginUser = async (request, h) => {
   try {
-    console.log("ENTROU");
     const { email, password } = request.payload;
-    console.log("ENTROU", request.payload, email, password);
     const user = await userModel.getUserByEmail(email);
 
     if (!user) {
@@ -51,7 +47,6 @@ const loginUser = async (request, h) => {
 
     return h.response({ message: "login success", token }).code(200);
   } catch (err) {
-    console.log(err);
     return h.response({ message: "Login failed" }).code(500);
   }
 };

@@ -16,11 +16,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { NotFoundComponent } from './not-found/not-found.component';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatInputModule} from '@angular/material/input';
-import {MatTableModule} from '@angular/material/table';
-import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -28,7 +27,6 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     HomeComponent,
     RegisterComponent,
     TransactionsComponent,
-    NotFoundComponent,
     DepositDialogComponent,
     WithdrawDialogComponent,
   ],
@@ -46,7 +44,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatDialogModule,
     MatInputModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

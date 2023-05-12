@@ -10,26 +10,19 @@
 }
 .form-container {
   width: 400px;
-  
 }
 
-.mat-label-name{
+.mat-label-name {
   margin-left: 106px;
-  
 }
-.mat-label-email{
+.mat-label-email {
   margin-left: 106px;
-  
 }
-.mat-label-password{
+.mat-label-password {
   margin-left: 106px;
-  
 }
 
 .btn-register {
   margin-top: 40px;
   margin-left: 159px;
 }
-
-
-
