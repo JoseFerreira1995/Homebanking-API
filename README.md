@@ -15,7 +15,14 @@ To start:
 
 
 
-![image](https://github.com/JoseFerreira1995/Homebanking-API/assets/108727573/6d4cf812-5ffc-4b57-9185-feebd738e535)
-![image](https://github.com/JoseFerreira1995/Homebanking-API/assets/108727573/80aa9442-457f-44c1-9fd1-fdbca5d82dd5)
+
+
+
+![image](https://github.com/JoseFerreira1995/Homebanking-API/assets/108727573/e19230bf-5b7f-414c-81dd-38179ad9a2a5)
+
+
+
+![image](https://github.com/JoseFerreira1995/Homebanking-API/assets/108727573/8956556c-a212-4324-af3c-4b4bfd2bdaeb)
+
 
 
