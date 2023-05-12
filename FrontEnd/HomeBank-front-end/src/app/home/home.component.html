@@ -1,0 +1,42 @@
+<h2 class="welcome">Wecome to E-Bank</h2>
+
+<div class="example-container">
+  <form
+    [formGroup]="loginForm"
+    (ngSubmit)="onSubmit()"
+    class="form-container-login"
+  >
+    <mat-form-field class="mat-log-email">
+      <mat-label>Email</mat-label>
+      <input
+        type="email"
+        matInput
+        formControlName="email"
+        placeholder="Ex. pat@example.com"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field class="mat-log-password">
+      <mat-label>Enter your password</mat-label>
+      <input
+        matInput
+        placeholder="password"
+        type="password"
+        formControlName="password"
+        required
+      />
+    </mat-form-field>
+    <div class="btn-home-login">
+      <button type="submit" mat-raised-button color="primary">Log In</button>
+    </div>
+  </form>
+  <div class="btn-home-signup">
+    <a
+      routerLink="/register"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+    >
+      <button mat-raised-button color="warn">Sign Up</button>
+    </a>
+  </div>
+</div>

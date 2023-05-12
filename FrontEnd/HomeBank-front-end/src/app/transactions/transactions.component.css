@@ -1,0 +1,21 @@
+.transiction-table {
+  height: 300px;
+  overflow: auto;
+}
+
+.balance {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.btn-deposit {
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 600px;
+}
+
+.btn-withdraw {
+  position: relative;
+  margin-top: 100px;
+  margin-left: 700px;
+}

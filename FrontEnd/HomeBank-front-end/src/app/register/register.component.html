@@ -1,0 +1,43 @@
+<h1 class="Sign-up">Sign Up</h1>
+
+<div class="example-container">
+  <form
+    [formGroup]="checkoutForm"
+    (ngSubmit)="onSubmit()"
+    class="form-container"
+  >
+    <mat-form-field class="mat-label-name">
+      <mat-label>Enter your Name</mat-label>
+      <input
+        matInput
+        placeholder="First Name"
+        type="text"
+        formControlName="name"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field class="mat-label-email">
+      <mat-label>Email</mat-label>
+      <input
+        type="email"
+        matInput
+        formControlName="email"
+        placeholder="Ex. pat@example.com"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field class="mat-label-password">
+      <mat-label>Enter your password</mat-label>
+      <input
+        matInput
+        placeholder="password"
+        type="password"
+        formControlName="password"
+        required
+      />
+    </mat-form-field>
+    <div class="btn-register">
+      <button type="submit" mat-raised-button color="primary">Sign Up</button>
+    </div>
+  </form>
+</div>

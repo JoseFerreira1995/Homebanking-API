@@ -1,0 +1,28 @@
+.Sign-up {
+  margin-top: 20px;
+  text-align: center;
+}
+.example-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+.form-container {
+  width: 400px;
+}
+
+.mat-label-name {
+  margin-left: 106px;
+}
+.mat-label-email {
+  margin-left: 106px;
+}
+.mat-label-password {
+  margin-left: 106px;
+}
+
+.btn-register {
+  margin-top: 40px;
+  margin-left: 159px;
+}
