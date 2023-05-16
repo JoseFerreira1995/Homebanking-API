@@ -2,13 +2,23 @@
 
 This is a Homebankink api made with HapiJs (https://hapi.dev/) and Angular(https://angular.io/)
 
-To start: 
+# Getting stared
 
-1: Git clone  
+# Prerequisites 
 
-2: in /BackEnd directory use node index.js 
+1. Git 
+2. Node: 18.10.0 version or greater
+3. Angular: 16.0.1 version 
+4. A clone of the Homebanking-Api on your local machine 
+5. npm install all required dependencies
 
-3: in /FronEnd/HomeBank-front-end directory use ng serve
+# To start: 
+
+1. cd /BackEnd to go into the server root
+3. node index.js to run the server 
+4. cd /FronEnd/HomeBank-front-end to go into the client side root 
+6. ng serve to start
+7. open http://localhost:4200 to open the site in your favorite browser 
 
 
 
